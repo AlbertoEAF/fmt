@@ -17,6 +17,15 @@
 #include <type_traits>
 #include <vector>
 
+// Warning: this breaks all print() functionality ///////////////////////////////////////
+/* This patch is needed to avoid warnings in CRAN as we don't use the print() methods. */
+/////////////////////////////////////////////////////////////////////////////////////////
+#undef stdout
+#define stdout NULL
+#undef stderr
+#define stderr NULL
+/////////////////////////////////////////////////////////////////////////////////////////
+
 // The fmt library version in the form major * 10000 + minor * 100 + patch.
 #define FMT_VERSION 70003
 
